@@ -1,0 +1,90 @@
+/* @import url(//db.onlinewebfonts.com/c/33ad6eb9ec2d17c1fea5fc3c70674a14?family=Western+Bang+Bang); */
+/* @import url(//db.onlinewebfonts.com/c/be0a688f032b5a91b57419a31904c117?family=CowboyRodeoW01-Regular); */
+@import url('http://fonts.cdnfonts.com/css/roadstore');
+@import url('http://fonts.cdnfonts.com/css/wild-justice-free-trial');
+
+
+body {
+    background-image: url(horse-herd-fog-nature-52500.webp);
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    backdrop-filter: url(filters.svg#filter) blur(2px) saturate(200%);
+}
+
+.iniciar {
+    background-image: none;
+    background-color: black;
+    /* margin-top: 300px; */
+    display: grid;
+    width: 200px;
+    height: 60px;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: 0.4s;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.iniciar:hover {
+    background-color: white;
+    color: black;
+    transition: 1s;
+}
+.txt1 h1 {
+   display: flex;
+   justify-content: center;
+   margin-left: 10px;
+
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color:black;
+    background-color: white;
+    transition: 1s;
+
+}
+
+.titulo{
+    font-family:Roadstore;
+    display: grid;
+    justify-content: column;
+    align-items: center;
+    /* margin-left: 50rem; */
+    /* background-color: blue; */
+    /* padding: 10px; */
+    margin-top: 120px;
+    font-size: 50px;
+    /* color-interpolation-filters: #fff; */
+
+
+}
+
+.titulo .texto {
+padding: 10px;
+}
+
+.titulo .bt{
+margin-top: -25px;
+    padding-left: 220px;
+}
+
+h1 {
+    transition: 0.4s;
+}
+h1:hover {
+    color:rgb(46, 46, 46);
+    transition: 1s;
+}

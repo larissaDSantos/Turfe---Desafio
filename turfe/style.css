@@ -1,0 +1,152 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+.container{
+    /* background-color: red; */
+    width: 500px;
+    height: 500px;
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-right:500px;
+    box-shadow:  10px 5px 5px  rgb(201, 201, 201) ;
+
+
+}
+.tudo{
+ margin-right:50px;
+ margin-left: 80px;
+
+ /* background-color: aqua; */
+
+
+}
+
+.button1 button{
+    background-color: black;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    transition: 0.4s;
+
+}
+.button1 button:hover {
+    background-color: #fff;
+    color: black;
+    transition: 1s;
+}
+.button2 button{
+    background-color: #fff;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    color: #000;
+    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.button2 button:hover {
+    background-color: black;
+    color:#fff;
+    transition: 1s;
+}
+
+.botao{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-left: 500px;
+    /* background-color: aqua; */
+    margin-right: 160px;
+    align-items: center;
+    /* background-color: blue; */
+
+
+}
+
+.inputs{
+    width: 500px;
+    /* display: flex; */
+    justify-content: column;
+    align-items: center;
+    display: grid;
+    margin-left: 500px;
+
+    margin-top: 30px;
+
+}
+
+.inputs input{
+    width: 320px;
+    padding: 8px;
+      
+
+}
+.inputs h2{
+
+    align-items: center;
+    justify-content: center;
+} 
+
+h2 {
+    transition: 0.4s;
+}
+h2:hover {
+    color:gray;
+    transition: 1s;
+}
+
+.imagem {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-left: 10px;
+
+}
+
+.imagem img{
+    width: 290px;
+    height: 290px;
+}
+
+.container2{
+    width: 500px;
+    height: 100px;
+    padding: 150px;
+    background-color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    /* margin-top: 100px; */
+    /* margin-right:500px; */
+    box-shadow:  10px 5px 5px  rgb(201, 201, 201) ;
+    margin-left: 100px;
+    color: #fff;
+
+
+}
+.voltas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0%;
+}
