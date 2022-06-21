@@ -128,15 +128,12 @@ h2:hover {
 
 .container2{
     width: 500px;
-    height: 100px;
-    padding: 150px;
+    padding: 100px;
     background-color:black;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    /* margin-top: 100px; */
-    /* margin-right:500px; */
     box-shadow:  10px 5px 5px  rgb(201, 201, 201) ;
     margin-left: 100px;
     color: #fff;
@@ -147,6 +144,6 @@ h2:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 0%;
+    flex-direction: column;
+    width: 200px;
 }
