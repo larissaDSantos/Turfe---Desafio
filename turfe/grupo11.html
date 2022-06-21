@@ -35,11 +35,11 @@
           </div>
     </div>
 
-    <div class="imagem" style="display: block;">
+    <div class="imagem" id="imgCavalinho" style="display: block;">
       <img src="cavalinho.jpg" alt="" srcset="">
     </div>
 
-    <div class="container2" style="display: none;">
+    <div class="container2" id="container_2" style="display: none;">
       <div id="volta" class="voltas"></div>
     </div>
 
@@ -60,7 +60,9 @@
 
   function correr() {
 
-
+    imgCavalinho.style.display = 'none';
+        
+    container_2.style.display = 'block';
 
     contador++;
     if (contador <= 7) {
@@ -171,9 +173,7 @@
 
         volta.innerHTML += `Em 3º lugar - ${perdedor} `;
 
-        imagem.style.display = 'none';
-        
-        container2.style.display = 'block';
+       
 
         // TA TUDO PRONTO, SÓ FALTA ARRUMAR O CSS!!!!!!
       }
