@@ -142,8 +142,11 @@ h2:hover {
 }
 .voltas{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 200px;
+    height: 300px;
+    overflow-y: scroll;
+
+
 }
