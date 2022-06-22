@@ -7,6 +7,21 @@ body{
 
 
 }
+
+/* .div1{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    
+}
+
+.div2{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+   
+
+} */
 .container{
     /* background-color: red; */
     width: 500px;
@@ -23,9 +38,13 @@ body{
 
 }
 .tudo{
- margin-right:50px;
- margin-left: 80px;
-
+ margin-right:300px;
+ /* margin-left: 130px; */
+ display: grid;
+ justify-content: column;
+ align-items: center;
+ position: fixed;
+/* width: 500px; */
  /* background-color: aqua; */
 
 
@@ -116,7 +135,7 @@ h2:hover {
     display: flex;
     justify-content: right;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 1120px;
 
 }
 
@@ -126,7 +145,8 @@ h2:hover {
 }
 
 .container2{
-    width: 500px;
+    width: 400px;
+    height: 300px;
     padding: 100px;
     background-color:black;
     display: flex;
@@ -134,9 +154,9 @@ h2:hover {
     align-items: center;
     border-radius: 10px;
     box-shadow:  10px 5px 5px  rgb(201, 201, 201) ;
-    margin-left: 100px;
+    margin-left: 1200px;
     color: #fff;
-
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 
 }
 .voltas{
@@ -145,11 +165,8 @@ h2:hover {
     flex-direction: column;
     width: 300px;
     height: 350px;
- 
-   
-   
+  
     overflow-y: scroll;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 
