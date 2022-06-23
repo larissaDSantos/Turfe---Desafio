@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Turfe Amigo</title>
+    <script src="script_voltas_da_corrida.js"></script>
+</head>
+
+<body style="background-color: black; color: white;">
+    <h5>Limite de cavalos</h5>
+    <input type="text" id="quantidade_input" min="2" max="6" onkeyup="receber_limite()"><br>
+    <h1 id="frase_limite_de_cavalos" style="display:none;"></h1>
+    <h5>Nome do cavalo</h5>
+    <input type="text" id="nome_input"><br>
+    <h5>Quantidade de voltas</h5>
+    <input type="text" id="voltas_input"><br>
+    <button onclick="registrar_nome()">Registre o nome do Pocotó</button>
+    <button onclick="dar_volta()">Dar uma volta</button>
+    <div id="resultados_da_volta"></div>
+</body>
+
+</html>
+
+<script>
+    
+    var quantidade_limite_registros = 0;
+    var registro_de_cavalos = [];
+
+    function receber_limite() {
+        quantidade_limite_registros = Number(quantidade_input.value)
+    }
+
+    function registrar_nome() {
+        if (nome_input.value == '') {
+            alert('Insira o nome do cavalo')
+        }
+        else if (quantidade_limite_registros > registro_de_cavalos.length) {
+            registro_de_cavalos.push(nome_input.value);
+            nome_input.value = '';
+        }
+        else {
+            alert('Limite de nomes alcançado')
+            nome_input.value = ''
+        }
+    }
+
+    function dar_volta() {
+        if (quantidade_limite_registros < 2 || quantidade_limite_registros > 6) {
+            quantidade_input.value = ''
+            alert(`Valor inválido, digite um número entre 2 e 6`)
+            return;
+        }
+        else {
+            voltas();
+        }
+    }
+
+
+</script>
