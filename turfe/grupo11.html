@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script_voltas_da_corrida.js"></script>
     <title>Turfe Amigo</title>
   </head>
   <body>
@@ -15,23 +16,23 @@
        
                             <div class="inputs">
                               <h2>TURFE</h2>
-                                  <input type="text" placeholder="Quantidade de cavalos">
+                                  <input id="quantidade_input" min="2" max="6" onkeyup="receber_limite()" type="text" placeholder="Quantidade de cavalos">
 
                                   <br>
 
-                                  <input type="text" placeholder="Nome">
+                                  <input id="nome_input" type="text" placeholder="Nome">
 
                                   <br>
                       
-                                  <input type="text" placeholder="Número de voltas">
+                                  <input id="voltas_input" type="text" placeholder="Número de voltas">
 
                             </div>
                             <div class="botao">
                                       <div class="button1">
-                                      <button onclick="correr()">JOGAR</button>
+                                      <button onclick="dar_volta()">JOGAR</button>
                                       </div>
                                       <div class="button2">
-                                      <button onclick="correr()">NOMEAR</button>
+                                      <button onclick="registrar_nome()">NOMEAR</button>
                                       </div>
           </div>
     </div>
@@ -45,7 +46,7 @@
 
     <div class="container2" id="container_2" style="display: none;">
 
-      <div id="volta" class="voltas"></div>
+      <div id="resultados_da_volta" class="voltas"></div>
   
     </div>
 
@@ -57,134 +58,41 @@
 </html>
 
 <script>
-  var somaC1 = 0;
-  var somaC2 = 0;
-  var somaC3 = 0;
-  var tempoC1 = 0;
-  var tempoC2 = 0;
-  var tempoC3 = 0;
+    
+  var quantidade_limite_registros = 0;
+  var registro_de_cavalos = [];
 
-  var contador = 0;
-
-  function correr() {
-
-    imgCavalinho.style.display = 'none';
-        
-    container_2.style.display = 'block';
-
-    contador++;
-    if (contador <= 7) {
-      tempoC1 = Math.random() * 2 + 7;
-      somaC1 += tempoC1;
-      // console.log(somaC1);
-      tempoC2 = Math.random() * 2 + 7;
-      somaC2 += tempoC2;
-      tempoC3 = Math.random() * 2 + 7;
-      somaC3 += tempoC3;
-
-      volta.innerHTML += `<h2>Volta ${contador}</h2>`;
-      // console.log(tempoC1, tempoC2, tempoC3);
-      volta.innerHTML += `
-            Cavalo 01 - ${tempoC1.toFixed(1)} - ${somaC1.toFixed(
-        1
-      )} <br> Cavalo 02 - ${tempoC2.toFixed(1)} - ${somaC2.toFixed(
-        1
-      )} <br> Cavalo 03 - ${tempoC3.toFixed(1)} - ${somaC3.toFixed(1)} <br>
-            <br>`;
-
-      if (contador == 7) {
-        var menor = somaC1;
-        var maior = somaC1;
-        var segundo = 1;
-        var vencedor = 1;
-        var perdedor = 1;
-
-        // if(somaC1 <= menor){
-        //     menor = somaC1
-        //     vencedor = 1;
-        // } else if (somaC1 >= maior) {
-        //     maior = somaC1;
-        //     perdedor = 1;
-        // } else {
-        //     segundo = 1;
-        // }
-
-        // if(somaC2 < menor){
-        //     menor = somaC2
-        //     vencedor = 2;
-        // } else if (somaC2 > maior) {
-        //     maior = somaC2;
-        //     perdedor = 2;
-        // } else {
-        //     segundo = 2;
-        // }
-
-        // if(somaC3 < menor){
-        //     menor = somaC3
-        //     vencedor = 3;
-        // } else if (somaC3 > maior) {
-        //     maior = somaC3;
-        //     perdedor = 3;
-        // } else {
-        //     segundo = 3;
-        // }
-
-        if (somaC1 < menor) {
-          menor = somaC1;
-          vencedor = 1;
-        }
-
-        if (somaC2 < menor) {
-          menor = somaC2;
-          vencedor = 2;
-        }
-
-        if (somaC3 < menor) {
-          menor = somaC3;
-          vencedor = 3;
-        }
-
-        if (somaC1 > maior) {
-          maior = somaC1;
-          perdedor = 1;
-        }
-
-        if (somaC2 > maior) {
-          maior = somaC2;
-          perdedor = 2;
-        }
-
-        if (somaC3 > maior) {
-          maior = somaC3;
-          perdedor = 3;
-        }
-
-        if (vencedor == 1 && perdedor == 2) {
-          segundo = 3;
-        } else if (vencedor == 2 && perdedor == 1) {
-          segundo = 3;
-        } else if (
-          (vencedor == 3 && perdedor == 1) ||
-          (vencedor == 1 && perdedor == 3)
-        ) {
-          segundo = 2;
-        } else if (
-          (vencedor == 2 && perdedor == 3) ||
-          (vencedor == 3 && perdedor == 2)
-        ) {
-          segundo = 1;
-        }
-
-        volta.innerHTML += `Em 1º lugar - ${vencedor} <br>`;
-
-        volta.innerHTML += `Em 2º lugar - ${segundo} <br>`;
-
-        volta.innerHTML += `Em 3º lugar - ${perdedor} `;
-
-       
-
-        // TA TUDO PRONTO, SÓ FALTA ARRUMAR O CSS!!!!!!
-      }
-    }
+  function receber_limite() {
+      quantidade_limite_registros = Number(quantidade_input.value)
   }
+
+  function registrar_nome() {
+      if (nome_input.value == '') {
+          alert('Insira o nome do cavalo')
+      }
+      else if (quantidade_limite_registros > registro_de_cavalos.length) {
+          registro_de_cavalos.push(nome_input.value);
+          nome_input.value = '';
+      }
+      else {
+          alert('Limite de nomes alcançado')
+          nome_input.value = ''
+      }
+  }
+
+  function dar_volta() {
+      if (quantidade_limite_registros < 2 || quantidade_limite_registros > 6) {
+          quantidade_input.value = ''
+          alert(`Valor inválido, digite um número entre 2 e 6`)
+          return;
+      }
+      else {
+        imgCavalinho.style.display = 'none';
+        
+       container_2.style.display = 'block';
+          voltas();
+      }
+  }
+
+
 </script>
