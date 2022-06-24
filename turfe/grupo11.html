@@ -8,7 +8,7 @@
     <script src="script_voltas_da_corrida.js"></script>
     <title>Turfe Amigo</title>
   </head>
-  <body>
+  <body onload="inicio()">
 
     <div class="container">
 
@@ -16,23 +16,47 @@
        
                             <div class="inputs">
                               <h2>TURFE</h2>
-                                  <input id="quantidade_input" min="2" max="6" onkeyup="receber_limite()" type="text" placeholder="Quantidade de cavalos">
+                              <div id="parte1">
+
+                                <input id="quantidade_input" min="2" max="6" onkeyup="receber_limite()" type="text" placeholder="Quantidade de cavalos">
+                                <br>
+                                <br>
+                                <div class="button1">
+                                  <button class="button1" id="btn_qtd_cavalos" onclick="definir()">Definir</button>
+                                </div>
+                                
+                              </div>
+                              <div id="frase_qtd_cavalos"></div>
 
                                   <br>
+                                <br>
 
-                                  <input id="nome_input" type="text" placeholder="Nome">
+                              <div id="parte2">
 
+                                <input id="voltas_input" type="text" placeholder="Número de voltas">
+                                <br>
+                                <br>
+                                <div class="button1">
+                                  <button class="button1" id="btn_qtd_voltas" onclick="definir2()">Definir</button>
+                                </div>
+
+                              </div>
+                                  <div id="frase_qtd_voltas"></div>
+                                  
                                   <br>
-                      
-                                  <input id="voltas_input" type="text" placeholder="Número de voltas">
+                                <div id="parte3">
+
+                                  <input id="nome_input" type="text" placeholder="Nome do cavalo">
+
+                                </div>
 
                             </div>
                             <div class="botao">
                                       <div class="button1">
-                                      <button onclick="dar_volta()">JOGAR</button>
+                                      <button id="btn_jogar" onclick="dar_volta()">JOGAR</button>
                                       </div>
                                       <div class="button2">
-                                      <button onclick="registrar_nome()">NOMEAR</button>
+                                      <button id="btn_nomear" onclick="registrar_nome()">NOMEAR</button>
                                       </div>
           </div>
     </div>
@@ -73,6 +97,9 @@
       else if (quantidade_limite_registros > registro_de_cavalos.length) {
           registro_de_cavalos.push(nome_input.value);
           nome_input.value = '';
+          if (registro_de_cavalos.length>=2) {
+            btn_jogar.style.display = 'block'
+          }
       }
       else {
           alert('Limite de nomes alcançado')

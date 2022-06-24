@@ -12,9 +12,32 @@ var soma4 = Number(0);
 var soma5 = Number(0);
 var soma6 = Number(0);
 
+function inicio() {
+    parte2.style.display = 'none'
+    parte3.style.display = 'none'
+    btn_jogar.style.display = 'none'
+    btn_nomear.style.display = 'none'
+}
+
+function definir() {
+    parte1.style.display = 'none'
+    parte2.style.display = 'block'
+    frase_qtd_cavalos.innerHTML = `Quantidade de cavalos: ${quantidade_input.value}`
+
+}
+
+function definir2() {
+    parte2.style.display = 'none'
+    parte3.style.display = 'block'
+    frase_qtd_voltas.innerHTML = `Quantidade de voltas: ${voltas_input.value}`
+    btn_nomear.style.display = 'block'
+}
+
 async function voltas () {
 
-        for (var numero_da_volta = 1; numero_da_volta <= voltas_input.value; numero_da_volta++) {
+        resultados_da_volta.innerHTML = ''
+
+        for (let numero_da_volta = 1; numero_da_volta <= voltas_input.value; numero_da_volta++) {
             Number(numero_da_volta);
             await new Promise(obtenha =>{
 
